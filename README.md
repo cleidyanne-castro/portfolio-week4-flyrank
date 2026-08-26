@@ -39,6 +39,7 @@ anne-portfolio-week4/
 ├── EVIDENCE.md
 ├── fix-log.md
 └── week4-stack-rationale.md
+```
 
 ## Reproduce locally
 
