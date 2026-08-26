@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cleidyanne Castro | AI & Data Portfolio</title>
+  <title>Cleidyanne Castro | AI and Data Portfolio</title>
 
   <style>
     body {
@@ -139,12 +139,14 @@
       <h2>Contact Me</h2>
 
       <form
+        id="contact-form"
         action="https://formsubmit.co/annecbs93@gmail.com"
         method="POST"
       >
         <input type="hidden" name="_subject" value="Portfolio Contact">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 
         <label for="name">Name</label>
         <input
@@ -152,6 +154,7 @@
           id="name"
           name="name"
           placeholder="Your name"
+          autocomplete="name"
           required
         >
 
@@ -161,6 +164,7 @@
           id="email"
           name="email"
           placeholder="you@example.com"
+          autocomplete="email"
           required
         >
 
@@ -173,10 +177,23 @@
           required
         ></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" id="submit-button">Send Message</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
 
   </main>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const button = document.getElementById("submit-button");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", () => {
+      button.disabled = true;
+      button.textContent = "Sending...";
+      status.textContent = "Sending your message through FormSubmit.";
+    });
+  </script>
 </body>
 </html>
